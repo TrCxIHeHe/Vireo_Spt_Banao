@@ -1,0 +1,75 @@
+{
+  "scope": {
+    "start": "2025-01-01",
+    "end": "2026-06-30",
+    "tickets": 11641,
+    "out_of_scope_rows": 139
+  },
+  "team_reconciliation": [
+    {
+      "team": "Billing",
+      "first_assigned_volume": 2425,
+      "resolving_volume": 1798,
+      "delta_resolving_minus_assigned": -627
+    },
+    {
+      "team": "Chat Frontline",
+      "first_assigned_volume": 3030,
+      "resolving_volume": 3078,
+      "delta_resolving_minus_assigned": 48
+    },
+    {
+      "team": "Email Frontline",
+      "first_assigned_volume": 1807,
+      "resolving_volume": 1658,
+      "delta_resolving_minus_assigned": -149
+    },
+    {
+      "team": "Escalations & Warranty",
+      "first_assigned_volume": 525,
+      "resolving_volume": 650,
+      "delta_resolving_minus_assigned": 125
+    },
+    {
+      "team": "Logistics",
+      "first_assigned_volume": 1905,
+      "resolving_volume": 2574,
+      "delta_resolving_minus_assigned": 669
+    },
+    {
+      "team": "Returns Desk",
+      "first_assigned_volume": 1049,
+      "resolving_volume": 1117,
+      "delta_resolving_minus_assigned": 68
+    },
+    {
+      "team": "Voice Frontline",
+      "first_assigned_volume": 900,
+      "resolving_volume": 766,
+      "delta_resolving_minus_assigned": -134
+    }
+  ],
+  "misrouting": {
+    "current_helpdesk_tickets": 7728,
+    "tickets_assigned_to_a_different_resolving_team": 1293,
+    "misroute_ticket_rate": 0.16731366459627328,
+    "misroute_transfer_events": 1143.0,
+    "misroute_transfer_events_per_ticket": 0.14790372670807453,
+    "misroute_transfer_cost_over_current_period_inr": 348615.0
+  },
+  "650_per_week_projection": {
+    "tickets_per_year": 33800,
+    "annual_misroute_transfer_cost_inr": 1524739.5186335403,
+    "annual_cost_at_50pct_reduction_inr": 762369.7593167701,
+    "two_hire_cost_inr": 900000
+  },
+  "tool_cost": {
+    "paid_calls": 0,
+    "api_cost_inr": 0
+  },
+  "notes": [
+    "First-assigned team is intake routing metadata; resolver_team is reconstructed from the agent roster at ticket creation date.",
+    "AI category is an advisory semantic categorization from customer_message + agent_notes. Existing bot category is treated as noisy, not ground truth.",
+    "Tier 2 is not compared with Tier 1 for staffing, per support policy v3.2."
+  ]
+}
