@@ -30,6 +30,6 @@ I checked the final output on a fixed **50-ticket AI-assisted second-pass review
 
 One important caveat: the file supplied contains **139 rows before 1 Jan 2025** even though the brief defines Jan 2025–Jun 2026 as the window. I excluded those rows. The file averages about **148 tickets/week**, far below the stated current ~650/week, so the money case above is explicitly scaled to Vireo’s stated run rate.
 
-Regards,
+Best Regards,
 
 Triambak
