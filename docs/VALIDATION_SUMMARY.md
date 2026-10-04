@@ -1,11 +1,13 @@
 # Validation summary
 
-A fixed **50-ticket random sample** (seed `20261001`) was independently second-pass reviewed from `customer_message` + `agent_notes`, without using the original intake tag as the gold label.
+A fixed **50-ticket random sample** (seed `20261001`) was second-pass reviewed with **AI assistance** using the `customer_message` + `agent_notes` fields. The original intake tag was not used as the target label.
 
-Result: **50/50 matched; 0% error on this sample.**
+Result: **0 disagreements in 50 checks (0% observed mismatch).**
 
-This is a spot-check, not a statistically powered benchmark. A larger independently double-reviewed set should precede production deployment.
+This review is **not an independent human gold standard**. It is a small AI-assisted spot-check. If the 50 audit labels are treated as correct and independent, a one-sided 95% binomial upper bound on the true mismatch rate is about **5.8% (~6%)**. Because the review labels themselves were AI-assisted, that bound should not be read as a formal production-accuracy guarantee.
 
-Observed residual risk: ambiguous multi-intent hardware cases and unusual/typo-heavy language. The tool remains advisory and does not modify helpdesk state.
+Expected residual-risk cases are ambiguous multi-intent tickets, typo-heavy language, and hardware cases where warranty/repair, refund, and delivery language appear together. No such mismatch was observed in this 50-ticket sample.
 
-The reviewed sample is kept in the private working file `PRIVATE_audit_sheet_DO_NOT_COMMIT.csv`; it is not included in the public repository.
+`output/validation_audit.csv` contains only `ticket_id`, the AI-assisted audit label, the tool label, and a match flag. It intentionally contains no customer message or agent note.
+
+The tool remains advisory and does not modify helpdesk state.

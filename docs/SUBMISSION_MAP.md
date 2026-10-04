@@ -18,12 +18,12 @@ Upload the contents of this folder to a new **public** GitHub repository.
 - `docs/recording_script.md` — the script for the required screen recording.
 - `docs/SUBMISSION_MAP.md` — this handoff guide.
 - `docs/memo_priya_raman.md` — copy of the one-page business memo.
-- `output/ai_category_summary.csv` — aggregate category summary.
 - `output/monthly_category_ai.csv` — monthly AI-category counts.
 - `output/monthly_category_current_tag.csv` — monthly original-tag counts.
 - `output/monthly_resolving_team.csv` — monthly resolving-team counts.
 - `output/team_intake_vs_resolving.csv` — first-assigned vs resolving reconciliation.
 - `output/metrics.json` — business metrics used in the memo/form.
+- `output/validation_audit.csv` — labels-only validation audit; no customer text.
 - `output/monthly_ai_category.png` — category chart.
 - `output/monthly_resolving_team.png` — team chart.
 - `output/report.html` — one-file management summary.
@@ -63,7 +63,7 @@ pip install -r requirements.txt
 Run the analysis:
 
 ```bash
-python support_tool.py --tickets /path/to/tickets.csv --agents /path/to/agents.csv --out output
+python support_tool.py --tickets <path-to-challenge-pack>/tickets.csv --agents <path-to-challenge-pack>/agents.csv --out output
 ```
 
 The run creates/refreshes the output files in `output/`.
@@ -75,7 +75,7 @@ There are four things to hand in:
 1. **Public GitHub URL** — the repository described above.
 2. **One-page memo** — `docs/memo_priya_raman.md` or the matching copy in `submission/`.
 3. **Three-minute screen recording** — record the flow in `docs/recording_script.md`, upload to Google Drive, and set the link to Viewer access.
-4. **Completed submission form** — use the prepared `submission/submission-form.md` as the answer sheet, then add your real Drive URL and GitHub URL.
+4. **Completed submission form** — the submission form is outside this public repository. Use the prepared answer sheet from the submission bundle, then add your real Drive URL, GitHub URL, and actual hours.
 
 ## Important honesty note
 

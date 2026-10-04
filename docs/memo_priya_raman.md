@@ -26,7 +26,7 @@ That is close to the **Rs 9 lakh annual cost of two hires**. I would therefore f
 
 The tool itself is deliberately small: local TF-IDF + logistic regression, with policy-aware overrides for explicit issue types. It makes a category suggestion and produces monthly category/team charts; it does not silently re-route tickets.
 
-I checked the final output on an **independent 50-ticket semantic audit** using the two free-text fields rather than the bot tag. It made **0 mismatches on that sample (50/50)**. The main residual risk is ambiguous or unusually worded hardware cases; those should remain human-review cases.
+I checked the final output on a fixed **50-ticket AI-assisted second-pass review** using the two free-text fields rather than the bot tag. It had **0 observed mismatches in 50 checks**. This is not an independent human gold set; treating those 50 labels as correct and independent gives a one-sided 95% upper bound of about **5.8% (~6%)** on the true mismatch rate. The main residual risks are ambiguous or unusually worded hardware cases; those should remain human-review cases.
 
 One important caveat: the file supplied contains **139 rows before 1 Jan 2025** even though the brief defines Jan 2025–Jun 2026 as the window. I excluded those rows. The file averages about **148 tickets/week**, far below the stated current ~650/week, so the money case above is explicitly scaled to Vireo’s stated run rate.
 

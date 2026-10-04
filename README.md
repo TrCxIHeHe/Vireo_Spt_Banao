@@ -28,7 +28,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Put the client CSVs somewhere local, then run:
+Put the pack's `tickets.csv` and `agents.csv` somewhere local (the reviewer supplies these files from the challenge pack; keep them outside this public repository), then run:
 
 ```bash
 python support_tool.py \
@@ -42,6 +42,7 @@ The script does **not** upload data or call a paid model/API.
 ## Outputs
 
 - `ticket_predictions.csv` — generated locally on each run; **not committed to the public repo** because it contains ticket-level client text.
+- `validation_audit.csv` — labels-only validation artifact (ticket ID, AI-assisted audit label, tool label, match); it contains no customer text or agent notes.
 - `monthly_category_ai.csv` — monthly AI-assisted category counts.
 - `monthly_category_current_tag.csv` — monthly original-tag counts.
 - `monthly_resolving_team.csv` — monthly resolving-team counts.
@@ -58,7 +59,7 @@ The dataset includes 139 rows created before 1 Jan 2025 even though the pack def
 
 ## Validation
 
-A fixed **50-ticket random sample** (seed `20261001`) was independently second-pass reviewed from `customer_message` + `agent_notes`, without using the original intake tag as the gold label: **50/50 matched; 0% error on this sample**. This is a spot-check, not a statistically powered benchmark. A larger independently double-reviewed set should precede production deployment.
+A fixed **50-ticket random sample** (seed `20261001`) was second-pass reviewed with **AI assistance** from `customer_message` + `agent_notes`, without using the original intake tag as the target. The audit found **0 disagreements in 50 checks (0% observed mismatch)**. This is **not an independent human gold set** and is only a spot-check. Treating the 50 review labels as correct and independent, the one-sided 95% binomial upper bound on the true mismatch rate is about **5.8% (~6%)**; because the review itself was AI-assisted, this is an uncertainty bound, not a production accuracy guarantee.
 
 ## Deliberate scope choices
 

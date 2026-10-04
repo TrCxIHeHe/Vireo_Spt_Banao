@@ -17,10 +17,11 @@ Give two examples:
 - a “promo code invalid” ticket becomes Billing & Payments rather than Product Enquiry.
 
 **1:35–2:05 — Show validation**
-Open the validation section / submission notes:
-- 50-ticket independent semantic spot-check
-- 50/50 matched on the fixed sample
-- 0% mismatch on this spot-check; describe it as a spot-check, not a production benchmark
+Open `output/validation_audit.csv` and `docs/VALIDATION_SUMMARY.md`:
+- fixed 50-ticket sample
+- AI-assisted second-pass review, not an independent human gold set
+- 0 observed mismatches in 50 checks
+- explain the ~6% one-sided 95% upper-bound uncertainty and why this is only a spot-check
 
 **2:05–2:35 — What changed / what was discarded**
 Show `PROMPTS_AND_BUILD_LOG.md`:

@@ -29,7 +29,7 @@ The result is positioned as an advisory categorizer, not an autonomous router.
 1. “Treat the Vireo brief, email thread, README and support policy as the source of truth; identify the operational decision the client is actually trying to make.”
 2. “Reconstruct resolving-team workload from the agent roster and ticket resolver rather than assuming the first-assigned team equals ownership.”
 3. “Design a small reproducible local tool that categorizes tickets from the two free-text fields, produces monthly category/team breakdowns, and quantifies routing waste.”
-4. “Audit the proposed categorizer on a separate fixed random sample and record the kind of mistakes it makes.”
+4. “Audit the proposed categorizer on a separate fixed random sample and record the kind of mistakes it makes.” The final audit was AI-assisted and therefore is not claimed as an independent human gold set.
 
 ## What I threw away
 
@@ -37,3 +37,11 @@ The result is positioned as an advisory categorizer, not an autonomous router.
 - A model optimized to reproduce the intake bot's labels.
 - An attempt to make a full dashboard before the business case was stable.
 - Autonomous routing as a product decision; the observed ambiguity risk was not low enough to justify silent rerouting.
+
+## Validation caveat
+
+The 50-ticket audit labels were generated with AI assistance. The public `output/validation_audit.csv` exposes only ticket IDs, audit labels, tool labels, and match flags so the client can cross-check against the supplied pack without publishing customer text.
+
+## Model-label caveat
+
+The fallback TF-IDF + logistic-regression classifier is trained on the existing bot `category` field. Those labels are noisy by design. The classifier is only used when the higher-precision rule layer is inconclusive, but it can still inherit the bot taxonomy's errors.
