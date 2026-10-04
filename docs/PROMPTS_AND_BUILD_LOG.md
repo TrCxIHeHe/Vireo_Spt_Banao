@@ -2,7 +2,7 @@
 
 ## AI used outside the submitted local model
 
-I used ChatGPT to reason through the brief, inspect the data, shape the analysis, draft the memo, and write/debug the local tool.
+I used ChatGPT to reason through the brief, inspect the data, shape the analysis, draft the memo, and debug the local tool.
 
 ## Local model in the tool
 
